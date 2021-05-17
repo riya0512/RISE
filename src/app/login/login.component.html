@@ -1,17 +1,58 @@
 <h1>Login Form</h1>
 <form>
     <div class="input">
-        <label>Username</label>
-        <input type="text" name="username" [(ngModel)]="username">
+        <label>Username :</label>
+        <input [ngStyle]="{'color': 'red'}" type="text" name="username" ngModel #username="ngModel" class="form-control" required />
+        <div *ngIf="username.errors && (username.dirty || username.touched)">
+            <p *ngIf="username.errors.required">Username is required</p>
+        </div>
     </div>
+    <br/><br/>
 
     <div class="input">
-        <label>Password</label>
-        <input type="password" name="password" [(ngModel)]="password">
+        <label>Password :</label>
+        <input type="password" name="password" ngModel #password="ngModel" class="form-control" minlength="8">
+        <div *ngIf="password.errors && (password.dirty || password.touched)">
+            <p *ngIf="password.errors.required">Password is required</p>
+            <p *ngIf="password.errors.minlength">Password length is minimum 8 character</p>
+        </div>
+
     </div>
 
+
+    <br/><br/>
+
+    <label>Country :</label>
+    <select name="countries" id="countries" style="font-size: 1.0rem;" [(ngModel)]="countrySelected">
+                <option *ngFor="let country of countries" [value]="country" >{{country}}</option>
+        </select>
+    <br/><br/><br/>
+
+    <label>City :</label>
+    <select id="cities" name="cities" [ngSwitch]="countrySelected" style="font-size: 1.0rem;">
+
+                        <ng-template [ngSwitchCase]="'India'">
+                                <option *ngFor="let city of cities.India" value="city">{{city}}</option>
+
+                        </ng-template>
+                        <ng-template [ngSwitchCase]="'U.K'">
+                                <option *ngFor="let city of cities.UK" value="city">{{city}}</option>
+
+                        </ng-template>
+                        <ng-template [ngSwitchCase]="'U.S.A'">
+                                <option *ngFor="let city of cities.USA" value="city">{{city}}</option>
+
+                        </ng-template>
+
+        </select>
+
+
+    <br/><br/>
+
+
     <div class="input">
-        <input type="submit" value="Login" (click)="LoginUser()">
+
+        <input [ngStyle]="{'background-color': 'red'}" type="submit" value="Login" (click)="LoginUser()">
     </div>
 
 

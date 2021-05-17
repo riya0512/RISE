@@ -7,10 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-username:string="";
+username:any;
 password:string="";
 
+countries = ["India","U.K","U.S.A"];
+
+  cities = {
+    "India":["Hyderabad","Pune","Mumbai"],
+    "UK":["London","Manchester","Liverpool"],
+    "USA":["Los Angeles","New York","Chicago"]
+  }
+
+  countrySelected="India";
+  citySelected="";
+
   constructor() {
+    this.username="";
 
   }
 
