@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-username:any;
+username:string="";
 password:string="";
 
 countries = ["India","U.K","U.S.A"];
@@ -27,10 +27,11 @@ countries = ["India","U.K","U.S.A"];
   }
 
   ngOnInit(): void {
+
   }
 
-  LoginUser(){
-    if(this.username=="Riya" && this.password.length<8)
+  LoginUser(f:any){
+    if(this.username=="RIYA" && this.password.length<8)
     {
       alert('LOGIN SUCCESSFULL.......');
     }
@@ -39,6 +40,8 @@ countries = ["India","U.K","U.S.A"];
       alert('INVALID USERNAME AND PASSWORD.....');
     }
   }
+
+
 
 
 

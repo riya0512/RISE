@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'login-page';
+
+  parentEvent(event:any)
+  {
+    alert("This Is Parent "+JSON.stringify(event));
+
+    event.fullName = event.fname + ' ' + event.lname;
+  }
+
 }
