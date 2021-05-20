@@ -2,20 +2,21 @@
 <form #f="ngForm" (ngSubmit)="LoginUser(f)">
     <div class="input">
         <label>Username :</label>
-        <input type="text" name="username" ngModel #username="ngModel" class="form-control" required />
-        <div *ngIf="username.errors && (username.dirty || username.touched)">
+        <input type="text" name="username" ngModel #username="ngModel" class="form-control" pattern='(^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$)' required [appError]="username" />
+        <!-- <div *ngIf="username.errors && (username.dirty || username.touched)">
             <p *ngIf="username.errors.required">Username is required</p>
-        </div>
+            <p *ngIf="username.errors.pattern">Enter valid Email ID</p>
+        </div> -->
     </div>
     <br/><br/>
 
     <div class="input">
         <label>Password :</label>
-        <input type="password" name="password" ngModel #password="ngModel" class="form-control" minlength="8">
-        <div *ngIf="password.errors && (password.dirty || password.touched)">
+        <input type="password" name="password" ngModel #password="ngModel" class="form-control" minlength="8" required [appError]="password">
+        <!-- <div *ngIf="password.errors && (password.dirty || password.touched)">
             <p *ngIf="password.errors.required">Password is required</p>
             <p *ngIf="password.errors.minlength">Password length is minimum 8 character</p>
-        </div>
+        </div> -->
 
     </div>
 

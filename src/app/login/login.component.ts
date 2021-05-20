@@ -31,7 +31,7 @@ countries = ["India","U.K","U.S.A"];
   }
 
   LoginUser(f:any){
-    if(this.username=="RIYA" && this.password.length<8)
+    if(this.username=="Riya" && this.password.length<8)
     {
       alert('LOGIN SUCCESSFULL.......');
     }

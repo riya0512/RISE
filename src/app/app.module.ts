@@ -6,12 +6,18 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { CustomComponent } from './custom/custom.component';
+import { FullnameComponent } from './fullname/fullname.component';
+import { NamePipe } from './name.pipe';
+import { ErrorDirective } from './error.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    CustomComponent
+    CustomComponent,
+    FullnameComponent,
+    NamePipe,
+    ErrorDirective
   ],
   imports: [
     BrowserModule,
@@ -22,8 +28,5 @@ import { CustomComponent } from './custom/custom.component';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  parentFunction(data: any)
-  {
-    console.warn(data)
-  }
+
 }

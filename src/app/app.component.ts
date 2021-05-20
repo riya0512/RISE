@@ -8,11 +8,20 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'login-page';
 
-  parentEvent(event:any)
-  {
-    alert("This Is Parent "+JSON.stringify(event));
+  items:any=[
+          {
+           'fname':"Riya",
+           'lname':"Dighe",
+          },
+          {
+           'fname':"Priyansh",
+           'lname':"Dighe",
+          }];
+    fullname:string="";
 
-    event.fullName = event.fname + ' ' + event.lname;
+  parentClicked(event:any)
+  {
+    this.fullname = event;
   }
 
 }

@@ -1,3 +1,12 @@
 <app-login></app-login>
-<app-custom (parentEvent)="parentEvent($event)">
+
+<div *ngFor="let item of items">
+    <app-custom [item]="item" (itemClicked)="parentClicked($event)"></app-custom>
+</div>
+<div>{{fullname}}</div>
+
+
+<!-- <app-custom *ngFor="let item of items" [item]="item" (itemClicked)="parentClicked($event)"></app-custom> -->
+<!-- <app-custom (parentEvent)="parentEvent($event)">
 </app-custom>
+<app-fullname></app-fullname> -->

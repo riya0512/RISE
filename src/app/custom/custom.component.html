@@ -1,9 +1,23 @@
+<!-- <h1>Parent Component Example</h1>
 <form>
-    <label>First Name :</label>
-    <input type="text" name="firstName" id="firstName" [(ngModel)]="data.fname">
-    <br/><br/>
-    <label>Last Name :</label>
-    <input type="text" name="lastName" id="lastName" [(ngModel)]="data.lname">
-    <br/><br/>
-    <button (click)="onClick()">Submit</button>
-</form>
+    <div *ngFor="let d of data" [item]="" (itemClicked)="parentClick($event)">
+        <label>First Name :</label>
+        <input type="text" name="firstName" id="firstName" [(ngModel)]="d.fname">
+        <br/><br/>
+        <label>Last Name :</label>
+        <input type="text" name="lastName" id="lastName" [(ngModel)]="d.lname">
+        <br/><br/>
+
+        <button (click)="onClick()">Submit</button><br/><br/>
+
+
+
+        <span>fullname :{{d.fullname}}</span>
+    </div>
+
+
+</form> -->
+
+<div>FirstName :{{item.fname}} </div>
+<div>LastName :{{item.lname}} </div>
+<button (click)="onClick()">Submit</button>

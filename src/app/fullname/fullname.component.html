@@ -1,0 +1,23 @@
+<h1>Pipe example</h1>
+<form>
+    <label>First Name :</label>
+    <input type="text" name="firstName" id="firstName" [(ngModel)]="fname">
+    <br/><br/>
+    <label>Last Name :</label>
+    <input type="text" name="lastName" id="lastName" [(ngModel)]="lname">
+    <br/><br/>
+
+
+    <span>{{fname|name:lname}}</span>
+    <br/><br/>
+
+    <h1>Date Pipe Example</h1>
+
+    <!-- <input type="date" name="datepipe" [(ngModel)]="datepipe"><br/><br/> -->
+    <span>India Date Format: {{myDate | date : 'yyyy-mm-dd HH:mm a z':'+0900'}}</span><br/><br/>
+
+    <span>USA Date Format: {{myDate | date : 'full':'GMT+530'}}</span>
+
+
+
+</form>

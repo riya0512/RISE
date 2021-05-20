@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 
 @Component({
   selector: 'app-custom',
@@ -7,10 +7,9 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 })
 export class CustomComponent implements OnInit {
 
-data:any={'fname':"",
-          'lname':""};
+  @Input() item: any;
 
-@Output() parentEvent=new EventEmitter();
+@Output() itemClicked=new EventEmitter();
 
   constructor() { }
 
@@ -19,8 +18,6 @@ data:any={'fname':"",
 
   onClick()
   {
-    this.parentEvent.emit(this.data);
-
-    alert("This is Child"+JSON.stringify(this.data));
+    this.itemClicked.emit(this.item.fname+ ' ' +this.item.lname);
   }
 }
